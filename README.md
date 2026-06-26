@@ -1,68 +1,74 @@
-# 💸 BudgetHub - Cash Flow Dashboard
+# 💸 Sprint 02 — BudgetHub Cash Flow Dashboard
 
-A modern **SaaS-inspired Expense Tracker & Budget Management Dashboard** built using **HTML5, CSS3, and Vanilla JavaScript**. This project was developed as part of **Sprint 02 – Cash Flow Dashboard**, focusing on JavaScript fundamentals, DOM manipulation, data persistence, and interactive data visualization.
-
----
-
-## 🌟 Overview
-
-BudgetHub helps users manage their personal finances by allowing them to:
-
-* Set a monthly salary
-* Track daily expenses
-* Monitor remaining balance
-* Visualize spending with charts
-* Generate PDF reports
-* Store data locally for future sessions
-
-The project follows a clean SaaS-inspired interface while demonstrating core frontend engineering concepts without using frameworks like React or Vue.
+A fully responsive **Cash Flow Dashboard** built for **Sprint 02**, demonstrating Vanilla JavaScript fundamentals including DOM manipulation, LocalStorage, data visualization, and financial state management.
 
 ---
 
-## ✨ Features
+## 🌐 Live URL
 
-### ✅ Phase 1 – Base MVP
+> Deploy to Vercel/Netlify and paste your live URL here.
 
-* 💰 Set Total Monthly Salary
-* 💸 Add Expense Name & Amount
-* 📊 Real-Time Remaining Balance Calculation
-* ⚡ Dynamic DOM Updates
-* ✔️ Input Validation
-* 🚫 Prevent Empty & Negative Inputs
-* 📱 Responsive User Interface
+https://your-vercel-link.vercel.app/
 
 ---
 
-### ✅ Phase 2 – Data Persistence & Visualization
+## 📸 Screenshot
 
-* 💾 LocalStorage Integration
-* 🔄 Persistent Data After Refresh
-* 🗑 Delete Individual Expenses
-* 📈 Dynamic Pie Chart using Chart.js
-* 🔢 Automatic Balance Recalculation
+> Add a screenshot of your deployed dashboard here.
+
+```text
+<img width="1907" height="956" alt="BudgetHub Dashboard Screenshot" src="YOUR_SCREENSHOT_LINK_HERE" />
+```
 
 ---
 
-### ✅ Phase 3 – Advanced Features
+# ✅ Phases Completed
 
-* 📄 Download Expense Report as PDF (jsPDF)
-* 🚨 Low Balance Warning (Below 10%)
-* 🌙 Dark / Light Mode
+| Phase | Feature                                    | Status |
+| ----- | ------------------------------------------ | ------ |
+| 1     | Salary Input Form                          | ✅      |
+| 1     | Expense Name & Amount Input                | ✅      |
+| 1     | Dynamic DOM Rendering                      | ✅      |
+| 1     | Remaining Balance Calculation              | ✅      |
+| 1     | Input Validation (Empty & Negative Values) | ✅      |
+| 2     | LocalStorage Integration                   | ✅      |
+| 2     | Persistent Data After Refresh              | ✅      |
+| 2     | Delete Individual Expenses                 | ✅      |
+| 2     | Dynamic Pie Chart (Chart.js)               | ✅      |
+| 2     | Automatic Balance Recalculation            | ✅      |
+| 3     | PDF Report Generation (jsPDF)              | ✅      |
+| 3     | Balance Threshold Warning (<10%)           | ✅      |
+| 3     | Dark / Light Theme Toggle                  | ✅      |
+| 3     | Currency Toggle                            | ✅      |
+| 3     | Responsive SaaS Dashboard UI               | ✅      |
+
+---
+
+# 🛠️ Tech Stack
+
+* **HTML5** — Semantic Forms & Structure
+* **CSS3** — Responsive Layout, Flexbox, Grid & Modern UI
+* **Vanilla JavaScript (ES6)** — DOM Manipulation, Event Listeners & Business Logic
+* **Chart.js** — Interactive Financial Charts
+* **jsPDF** — PDF Report Generation
+* **LocalStorage API** — Client-side Data Persistence
+
+---
+
+# 🚀 Features
+
+* 💰 Monthly Salary Management
+* 💸 Expense Tracking
+* 📊 Real-Time Remaining Balance
+* 📈 Expense Analytics
+* 🥧 Interactive Pie Chart
+* 💾 LocalStorage Support
+* 🗑️ Delete Expenses
+* 📄 Export Financial Report as PDF
+* 🚨 Low Balance Warning
+* 🌙 Dark / Light Theme
 * 💱 Currency Toggle
-* 🔍 Live Expense Search
-* 📊 Dashboard Analytics
-* 🎨 Modern SaaS Dashboard Design
-
----
-
-# 🛠️ Technologies Used
-
-* HTML5
-* CSS3
-* Vanilla JavaScript (ES6)
-* Chart.js
-* jsPDF
-* LocalStorage API
+* 📱 Fully Responsive Design
 
 ---
 
@@ -79,178 +85,44 @@ BudgetHub/
 
 ---
 
-# 📊 Dashboard Modules
-
-### 💰 Salary Management
-
-* Set Monthly Salary
-* Dynamic Salary Display
-
-### 💸 Expense Management
-
-* Add New Expenses
-* Delete Expenses
-* Automatic Remaining Balance Calculation
-
-### 📈 Analytics
-
-* Total Salary
-* Total Expenses
-* Remaining Balance
-* Savings Percentage
-* Expense Distribution Chart
-
-### 📄 Reports
-
-* Download Expense Report as PDF
-
----
-
-# 🚀 Getting Started
-
-## Clone the Repository
+# ▶️ How to Run Locally
 
 ```bash
-git clone https://github.com/aashikajain5400/BudgetHub.git
+# No build step required
+
+open index.html
 ```
 
-## Navigate to the Project
-
-```bash
-cd BudgetHub
-```
-
-## Run the Application
-
-Simply open:
-
-```text
-index.html
-```
-
-in your preferred web browser.
-
-No installation or additional dependencies are required.
+Or simply double-click **index.html** in your browser.
 
 ---
 
-# 💾 Data Persistence
+# 🚀 Deployment
 
-The application stores all user data using the browser's **LocalStorage API**.
-
-The following information is saved automatically:
-
-* Salary
-* Expense List
-* Selected Theme
-* Currency Preference
-
-Your data remains available even after refreshing or reopening the browser.
-
----
-
-# 📸 Screenshots
-
-> Add screenshots after completing your project.
-
-### Dashboard
-
-```
-assets/screenshots/dashboard.png
-```
-
-### Expense Analytics
-
-```
-assets/screenshots/chart.png
-```
-
-### Mobile View
-
-```
-assets/screenshots/mobile.png
-```
-
----
-
-# 🎯 Sprint Objectives Covered
-
-✔ HTML Forms
-
-✔ Event Listeners
-
-✔ DOM Manipulation
-
-✔ Dynamic Rendering
-
-✔ Input Validation
-
-✔ Mathematical Calculations
-
-✔ Vanilla JavaScript
-
-✔ LocalStorage
-
-✔ CRUD Operations
-
-✔ Chart.js Integration
-
-✔ jsPDF Integration
-
-✔ Responsive Design
-
----
-
-# 🔮 Future Enhancements
-
-* 👤 User Authentication
-* ☁ Cloud Database Integration
-* 📅 Monthly Budget Goals
-* 🧾 Expense Categories
-* 📤 CSV / Excel Export
-* 🤖 AI Spending Insights
-* 📊 Advanced Financial Reports
-* 📱 Progressive Web App (PWA)
+Push the repository to GitHub, then connect it to **Vercel** or **Netlify** for automatic deployment.
 
 ---
 
 # 📚 Learning Outcomes
 
-This project strengthened my understanding of:
+This sprint demonstrates practical experience with:
 
-* JavaScript Fundamentals
+* Vanilla JavaScript
+* Event Listeners
 * DOM Manipulation
-* Event Handling
-* Objects & Arrays
-* LocalStorage API
-* Chart.js
-* jsPDF
+* Dynamic HTML Rendering
+* Form Validation
+* LocalStorage
+* CRUD Operations
+* Chart.js Integration
+* jsPDF Integration
 * Responsive Web Design
-* UI/UX Principles
-
----
-
-# 📜 License
-
-This project is licensed under the **MIT License**.
 
 ---
 
 # 👩‍💻 Author
 
-## Aashika Jain
+**Aashika Jain**
 
-**B.Tech Computer Science Engineering Student**
-
-Passionate about Web Development, Frontend Engineering, UI/UX Design, and building responsive web applications.
-
-* **GitHub:** https://github.com/aashikajain5400
-* **LinkedIn:** https://www.linkedin.com/in/aashika-jain-74b62b37b
-
----
-
-## ⭐ Support
-
-If you found this project helpful, consider giving it a **⭐ Star** on GitHub!
-
-Feedback and suggestions are always welcome.
+* GitHub: https://github.com/aashikajain5400
+* LinkedIn: https://www.linkedin.com/in/aashika-jain-74b62b37b
