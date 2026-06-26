@@ -7,6 +7,7 @@ A fully responsive **Cash Flow Dashboard** built for **Sprint 02**, demonstratin
 ## 🌐 Live URL
 
 > Deploy to Vercel/Netlify and paste your live URL here.
+> https://vercel.com/aashikajain5400-cells-projects/prodesk2
 
 https://your-vercel-link.vercel.app/
 
@@ -15,6 +16,10 @@ https://your-vercel-link.vercel.app/
 ## 📸 Screenshot
 
 > Add a screenshot of your deployed dashboard here.
+> <img width="1896" height="855" alt="image" src="https://github.com/user-attachments/assets/4546c44e-a246-4cb0-8aee-01586b9f00c8" />
+<img width="1897" height="867" alt="image" src="https://github.com/user-attachments/assets/baa876e2-da6f-45f5-99a8-f6b05a095b9c" />
+
+
 
 ```text
 <img width="1907" height="956" alt="BudgetHub Dashboard Screenshot" src="YOUR_SCREENSHOT_LINK_HERE" />
