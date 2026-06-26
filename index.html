@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>BudgetHub Dashboard</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- ===========================
+        SIDEBAR
+=========================== -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-wallet"></i>
+
+<h2>BudgetHub</h2>
+
+</div>
+
+<ul class="menu">
+
+<li class="active">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>Dashboard</span>
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-money-bill-wave"></i>
+
+<span>Income</span>
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-credit-card"></i>
+
+<span>Expenses</span>
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-chart-pie"></i>
+
+<span>Analytics</span>
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-file-pdf"></i>
+
+<span>Reports</span>
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- ===========================
+        MAIN
+=========================== -->
+
+<main class="main">
+
+<nav class="topbar">
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+id="searchExpense"
+type="text"
+placeholder="Search expenses...">
+
+</div>
+
+<div class="top-right">
+
+<label class="theme-switch">
+
+<input
+type="checkbox"
+id="themeToggle">
+
+<span class="slider"></span>
+
+</label>
+
+<button class="profile">
+
+<i class="fa-solid fa-user"></i>
+
+</button>
+
+</div>
+
+</nav>
+
+<section class="heading">
+
+<h1>Budget Dashboard</h1>
+
+<p>
+
+Track your salary,
+expenses and savings.
+
+</p>
+
+</section>
+
+<div
+id="warningBanner"
+class="warning-banner">
+
+Remaining balance has dropped below 10% of salary.
+
+</div>
+
+<!-- ===========================
+        DASHBOARD CARDS
+=========================== -->
+
+<section class="cards">
+
+<div class="card income">
+
+<div class="icon">
+
+<i class="fa-solid fa-wallet"></i>
+
+</div>
+
+<div class="info">
+
+<h3>Total Salary</h3>
+
+<h2 id="salaryValue">
+
+₹0
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="card expense">
+
+<div class="icon">
+
+<i class="fa-solid fa-credit-card"></i>
+
+</div>
+
+<div class="info">
+
+<h3>Total Expenses</h3>
+
+<h2 id="expenseValue">
+
+₹0
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="card balance">
+
+<div class="icon">
+
+<i class="fa-solid fa-piggy-bank"></i>
+
+</div>
+
+<div class="info">
+
+<h3>Remaining Balance</h3>
+
+<h2 id="remainingValue">
+
+₹0
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="card saving">
+
+<div class="icon">
+
+<i class="fa-solid fa-chart-simple"></i>
+
+</div>
+
+<div class="info">
+
+<h3>Savings Rate</h3>
+
+<h2 id="savingRate">
+
+0%
+
+</h2>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================
+        SALARY PANEL
+=========================== -->
+
+<section class="panel fade-up">
+
+    <h2 class="panel-title">
+        Monthly Salary
+    </h2>
+
+    <form
+        id="salaryForm"
+        class="income-form">
+
+        <div class="form-field">
+
+            <label>
+                Enter Salary
+            </label>
+
+            <input
+                id="salaryInput"
+                type="number"
+                placeholder="50000"
+                required>
+
+        </div>
+
+        <div class="form-field">
+
+            <label>
+
+                Currency
+
+            </label>
+
+            <select id="currencySelect">
+
+                <option value="INR">₹ INR</option>
+
+                <option value="USD">$ USD</option>
+
+                <option value="EUR">€ EUR</option>
+
+                <option value="GBP">£ GBP</option>
+
+            </select>
+
+        </div>
+
+        <button
+            class="primary-button"
+            type="submit">
+
+            Save Salary
+
+        </button>
+
+    </form>
+
+</section>
+
+<!-- ===========================
+        EXPENSE PANEL
+=========================== -->
+
+<section class="panel fade-up">
+
+    <h2 class="panel-title">
+
+        Add Expense
+
+    </h2>
+
+    <form
+        id="expenseForm"
+        class="expense-form">
+
+        <div class="form-field">
+
+            <label>
+
+                Expense Name
+
+            </label>
+
+            <input
+                id="expenseNameInput"
+                type="text"
+                placeholder="Netflix"
+                required>
+
+        </div>
+
+        <div class="form-field">
+
+            <label>
+
+                Amount
+
+            </label>
+
+            <input
+                id="expenseAmountInput"
+                type="number"
+                placeholder="499"
+                required>
+
+        </div>
+
+        <button
+            class="primary-button"
+            type="submit">
+
+            Add Expense
+
+        </button>
+
+    </form>
+
+    <p
+        id="errorMessage"
+        class="error-message">
+
+    </p>
+
+</section>
+
+<!-- ===========================
+        QUICK STATS
+=========================== -->
+
+<section class="stats-row fade-up">
+
+    <div class="stat-box">
+
+        <span>
+
+            Today's Expenses
+
+        </span>
+
+        <h2 id="todayExpense">
+
+            ₹0
+
+        </h2>
+
+    </div>
+
+    <div class="stat-box">
+
+        <span>
+
+            Transactions
+
+        </span>
+
+        <h2 id="transactionCount">
+
+            0
+
+        </h2>
+
+    </div>
+
+    <div class="stat-box">
+
+        <span>
+
+            Highest Expense
+
+        </span>
+
+        <h2 id="highestExpense">
+
+            ₹0
+
+        </h2>
+
+    </div>
+
+    <div class="stat-box">
+
+        <span>
+
+            Average Expense
+
+        </span>
+
+        <h2 id="averageExpense">
+
+            ₹0
+
+        </h2>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+        CHARTS
+=========================== -->
+
+<section class="chart-grid fade-up">
+
+    <div class="chart-card">
+
+        <h3>
+
+            Monthly Expenses
+
+        </h3>
+
+        <canvas id="lineChartCanvas"></canvas>
+
+    </div>
+
+    <div class="chart-card">
+
+        <h3>
+
+            Expense Categories
+
+        </h3>
+
+        <canvas id="pieChartCanvas"></canvas>
+
+    </div>
+
+</section>
+
+<section class="chart-grid fade-up">
+
+    <div class="chart-card">
+
+        <h3>
+
+            Income vs Expenses
+
+        </h3>
+
+        <canvas id="barChartCanvas"></canvas>
+
+    </div>
+
+    <div class="chart-card">
+
+        <h3>
+
+            Savings Progress
+
+        </h3>
+
+        <canvas id="savingChartCanvas"></canvas>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+        EXPENSE HISTORY
+=========================== -->
+
+<section class="table-card fade-up">
+
+    <div style="display:flex;
+                justify-content:space-between;
+                align-items:center;
+                margin-bottom:20px;">
+
+        <h2 class="panel-title">
+
+            Expense History
+
+        </h2>
+
+        <button
+            id="clearExpenses"
+            class="secondary-button">
+
+            Clear All
+
+        </button>
+
+    </div>
+
+    <table class="expense-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Expense</th>
+
+                <th>Amount</th>
+
+                <th>Date</th>
+
+                <th>Action</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="expenseTableBody">
+
+        </tbody>
+
+    </table>
+
+    <div
+        id="emptyState"
+        class="empty-state">
+
+        <i class="fa-solid fa-wallet"
+           style="font-size:55px;margin-bottom:20px;"></i>
+
+        <h3>No Expenses Yet</h3>
+
+        <p>
+
+            Add your first expense to start tracking.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+        REPORT BUTTONS
+=========================== -->
+
+<section
+class="chart-actions fade-up">
+
+    <button
+        id="downloadReportButton"
+        class="primary-button">
+
+        <i class="fa-solid fa-file-pdf"></i>
+
+        Download PDF Report
+
+    </button>
+
+</section>
+
+<!-- ===========================
+        TOAST
+=========================== -->
+
+<div
+id="toast"
+class="toast">
+
+Expense Added Successfully!
+
+</div>
+
+<!-- ===========================
+        FOOTER
+=========================== -->
+
+<footer
+style="
+margin-top:50px;
+text-align:center;
+color:var(--text2);
+padding:20px;
+border-top:1px solid var(--border);">
+
+<p>
+
+© 2026 BudgetHub
+
+Made with ❤️ using HTML CSS JavaScript
+
+</p>
+
+</footer>
+
+</main>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
